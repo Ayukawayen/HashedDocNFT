@@ -34,8 +34,10 @@ async function onAdapterLoad() {
 			let node = createElement('div', {'class':'item'}, [
 				//createElement('a', {'class':'item', tokenId:tokenId, href:`./token.html#${tokenId}`}, [
 					createElement('embed', {'class':'content', src:dataUri(tx.data.substr(2), meta.mimeType)}, ''),
-					createElement('div', {'class':'name'}, [meta.name]),
 				//]),
+				createElement('a', {'class':'item', href:`https://rinkeby.etherscan.io/tx/${tx.hash}`}, [
+					createElement('div', {'class':'name'}, [meta.name]),
+				]),
 			]);
 			
 			liNode.appendChild(node);
